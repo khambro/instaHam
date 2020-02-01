@@ -4,6 +4,7 @@ const users = require('./routes/api/users');
 const profile = require('./routes/api/profile');
 const posts = require('./routes/api/posts');
 const bodyparser = require('body-parser');
+const passport = require('passport');
 const app = express();
 
 //Body parser middlewear
@@ -18,6 +19,9 @@ mongoose
     .connect(db)
     .then(() => console.log('MongoDb connected!'))
     .catch(err => console.log(err));
+
+//Passport middlewear
+app.use(passport.initialize());
 
 //Use routes
 app.use('/api/users', users);

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const ImagesSchema = new Schema({
+const PostsSchema = new Schema({
     profile: {
         type: String,
         required: true,
@@ -27,4 +27,4 @@ const ImagesSchema = new Schema({
 
 
 
-module.exports = Images = mongoose.model('images', ImagesSchema);
+module.exports = Posts = mongoose.model('posts', PostsSchema);

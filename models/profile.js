@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const ProfileSchema = new Schema({
-    user : {
+    email : {
         type: String,
         required: true
     },
@@ -18,7 +18,6 @@ const ProfileSchema = new Schema({
         default: Date.now
     },
 });
-
 
 
 module.exports = Profile = mongoose.model('profile', ProfileSchema);
