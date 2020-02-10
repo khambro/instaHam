@@ -2,11 +2,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const ProfileSchema = new Schema({
-    email : {
-        type: String,
-        required: true
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
     },
-    username: {
+    handle: {
         type: String,
         required: true,
     },
