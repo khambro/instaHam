@@ -42,7 +42,7 @@ router.post(
     '/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-      const { errors, isValid } = validatePostInput(req.body);
+      const { errors, isValid } = validatePostInput(req.image);
   
       // Check Validation
       if (!isValid) {
@@ -51,7 +51,8 @@ router.post(
       }
   
       const newPost = new Post({
-        text: req.body.text,
+        caption: req.body.caption,
+        image: req.body.image,
         name: req.body.name,
         user: req.user.id
       });
